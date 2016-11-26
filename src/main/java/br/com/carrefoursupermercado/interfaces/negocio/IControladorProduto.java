@@ -5,12 +5,12 @@ package br.com.carrefoursupermercado.interfaces.negocio;
 
 import java.util.List;
 
+import javax.ws.rs.PathParam;
+import javax.ws.rs.core.Response;
+
 import br.com.carrefoursupermercado.classesBasicas.Produto;
 
-/**
- * @author Audry Martins
- *
- */
+
 public interface IControladorProduto
 {
 	// Métodos
@@ -19,6 +19,8 @@ public interface IControladorProduto
 	public String alterarProduto(Produto produto);
 
 	public List<Produto> consultarTodosProdutos();
+
+	public Response consultarProdutoPorId(@PathParam("id") int produtoID);
 
 	public Produto pesquisarProdutoPorNome(String nome);
 
